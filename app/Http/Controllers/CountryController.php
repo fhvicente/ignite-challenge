@@ -22,7 +22,7 @@ class CountryController extends Controller
             $query->where('name', 'like', '%' . $request->search . '%');
         }
 
-        $countries = $query->orderBy('name')->pagination(20);
+        $countries = $query->orderBy('name')->paginate(20);
 
         // Get unique continents for filter dropdown
         $continents = Country::select('continent')
@@ -30,7 +30,7 @@ class CountryController extends Controller
             ->orderBy('continent')
             ->pluck('continent');
 
-        return Inertia::render('Contries/Index', [
+        return Inertia::render('countries/index', [
             'countries' => $countries,
             'continents' => $continents,
             'filters' => $request->only(['search', 'continent']),

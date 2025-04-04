@@ -25,7 +25,7 @@ class FetchCountries extends Command
 
             if ($response->successful()) {
                 $countries = $response->json();
-                $this->info('Found' . count($countries) - 'countries.');
+                $this->info('Found ' . count($countries) . ' countries.');
 
                 // Clear existing records to avoid duplicates
                 Country::truncate();
@@ -61,7 +61,7 @@ class FetchCountries extends Command
             }
 
             $this->error('Failed to fetch countries data from API.');
-            Log::error('Failed to fetch countries data from API.', [
+            log::error('Failed to fetch countries data from API.', [
                 'status' => $response->status(),
                 'response' => $response->body(),
             ]);
