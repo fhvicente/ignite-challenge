@@ -20,7 +20,7 @@ export function AppShell({ children, variant = 'header' }: AppShellProps) {
 
     return (
         <SidebarProvider defaultOpen={isOpen}>
-            <div className="flex min-h-screen w-full flex-col bg-white text-gray-900">
+            <div className="flex min-h-screen w-full flex-row bg-white text-gray-900">
                 {children}
             </div>
         </SidebarProvider>

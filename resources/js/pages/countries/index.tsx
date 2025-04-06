@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from 'react';
+import React, { FormEvent } from 'react';
 import { Head, router, useForm } from '@inertiajs/react';
 import AuthenticatedLayout from '@/layouts/AuthenticatedLayout';
 import { Auth } from '@/types';
@@ -22,7 +22,6 @@ interface CountriesPaginatedData {
 }
 
 interface CountriesProps {
-    auth: Auth;
     countries: CountriesPaginatedData;
     continents: string[];
     filters: {
@@ -31,7 +30,7 @@ interface CountriesProps {
     };
 }
 
-export default function Index({ auth, countries, continents, filters }: CountriesProps) {
+export default function Index({ countries, continents, filters }: CountriesProps) {
     const { data, setData, get, processing } = useForm({
         search: filters.search || '',
         continent: filters.continent || 'all',

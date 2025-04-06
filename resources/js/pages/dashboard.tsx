@@ -32,7 +32,7 @@ export default function Dashboard({ stats }: DashboardProps) {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Dashboard" />
-            <div className="p-6 shadow-md rounded-lg animate-fade-in">
+            <div className="p-4 md:p-6 w-full">
                 <h1 className="text-2xl font-bold text-gray-900 mb-6">Countries Dashboard</h1>
                 
                 {/* Stats Cards */}
